@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$("#button1").click(function(){
+					$("tbody").children().each(function(){
+						let input = $("#text1").val();
+						let text = $(this).children().eq(2).text();
+						$(this).children().toggle(text == input || !input);
+					});
+			});
+		});
+	</script>
+	
+	<style>
+		table,tr, td, th{
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		td, #Artikelfilter{
+			width: 300px;
+			border-radius: 0px;
+		}
+	</style>
+
+</head>
+<body>
+
+	<input type="text" id="text1">
+	<button id="button1">Search</button>
+	<div id="div1">
+		<table>
+			<thead>
+				<tr>
+					<th><input type="text" id="Artikelfilter" value="Artikel"></th>
+					<th>Price</th>
+					<th>Nummer</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Tisch</td>
+					<td>100€</td>
+					<td>22</td>
+				</tr>
+				<tr>
+					<td>Stuhl</td>
+					<td>66€</td>
+					<td>34</td>
+				</tr>
+				<tr>
+					<td>Kugelschreiber</td>
+					<td>1€</td>
+					<td>12</td>
+				</tr>
+				<tr>
+					<td>Blocknot</td>
+					<td>5€</td>
+					<td>54</td>
+				</tr>
+				<tr>
+					<td>Wasser 1L</td>
+					<td>1€</td>
+					<td>43</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>
